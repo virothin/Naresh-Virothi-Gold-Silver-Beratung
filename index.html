@@ -1,69 +1,1015 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gold & Silver Investments</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gold & Silver – Naresh Virothi</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-deep: #B8962E;
+            --bg-dark: #111111;
+            --bg-card: #1C1C1C;
+            --text-light: #F5F5F5;
+            --text-muted: #C8C8C8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 60px;
+            background: rgba(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+        }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dvag-logo {
+    height: 32px;
+    width: auto;
+}
+
+.logo-text-block {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-main {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+.logo-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+
+        nav a {
+            color: var(--text-muted);
+            margin-left: 24px;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.25s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a:hover::after {
+            width: 60%;
+        }
+
+        .lang-switch {
+            margin-left: 20px;
+        }
+
+        .lang-switch button {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 6px 12px;
+            margin-left: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
+
+        .lang-switch button:hover,
+        .lang-switch button.active {
+            background: var(--gold);
+            color: #111;
+        }
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 140px 20px 120px;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+/* PREMIUM BRANDING BAR */
+.branding-premium {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 70px;
+}
+
+.dvag-logo {
+  height: 64px;
+  width: auto;
+}
+
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brand-main {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+.brand-sub {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #c0c0c0;
+  margin-top: 4px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+/* NEW TAX HEADLINE STYLE */
+.tax-headline {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    color: var(--gold);
+    margin: 30px auto 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* HERO IMAGE ABOVE HEADLINE */
+.hero-top-image {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: fadeInHero 1.4s ease-out forwards;
+}
+
+/* Soft spotlight behind the image */
+.hero-image-spotlight {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(212, 175, 55, 0.25) 0%,
+    rgba(212, 175, 55, 0.10) 40%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  filter: blur(28px);
+  z-index: 0;
+}
+
+/* Image styling + floating effect */
+.hero-top-image img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  animation: floatyHero 6s ease-in-out infinite;
+}
+
+/* Fade-in effect */
+@keyframes fadeInHero {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating premium effect */
+@keyframes floatyHero {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE SPACING IMPROVEMENTS */
+@media (max-width: 768px) {
+  .hero-top-image {
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .hero-top-image img {
+    border-radius: 8px;
+  }
+}
+
+
+        /* HERO IMAGES – ULTRA LUXURY */
+        .hero-images {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 60px auto 80px;
+            pointer-events: none;
+        }
+
+        .hero-images img {
+            width: 260px;
+            height: auto;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 1px solid rgba(212, 175, 55, 0.55);
+
+            box-shadow:
+                0 0 25px rgba(0, 0, 0, 0.6),
+                0 0 45px rgba(0, 0, 0, 0.8);
+
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+            animation: heroArcFade 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                       floaty 6s ease-in-out infinite;
+        }
+
+        .hero-images img:first-child {
+            --tilt: -6deg;
+            animation-delay: 0.15s;
+        }
+
+        .hero-images img:last-child {
+            --tilt: 6deg;
+            animation-delay: 0.35s;
+        }
+
+        @keyframes heroArcFade {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes floaty {
+            0%   { transform: translateY(0) rotate(var(--tilt)); }
+            50%  { transform: translateY(-10px) rotate(var(--tilt)); }
+            100% { transform: translateY(0) rotate(var(--tilt)); }
+        }
+
+        /* SPOTLIGHT */
+        .hero-spotlight {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(
+                circle at 50% 50%,
+                rgba(212, 175, 55, 0.16) 0%,
+                rgba(212, 175, 55, 0.06) 26%,
+                transparent 60%
+            );
+            transition: background 0.1s ease-out;
+            filter: blur(18px);
+        }
+
+        /* TAX HIGHLIGHT */
+        .tax-highlight {
+            margin: 20px auto 30px;
+            max-width: 600px;
+            padding: 12px 18px;
+            border-left: 3px solid var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            margin: 10px;
+            background: var(--gold);
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--gold-deep);
+            box-shadow: 0 0 14px rgba(212, 175, 55, 0.7);
+            transform: translateY(-1px);
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section p.lead {
+            color: var(--text-muted);
+            max-width: 650px;
+        }
+
+        /* WHY GOLD & SILVER */
+        .three-cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 4px;
+            border: 1px solid #262626;
+            color: var(--text-muted);
+        }
+
+        .info-box h3 {
+            color: var(--gold);
+            margin-top: 0;
+        }
+
+        /* PRODUCT MODULES */
+        .product {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .product h2 {
+            color: var(--gold);
+            font-family: "Playfair Display", serif;
+        }
+
+        .product-subline {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .product-card {
+            background: #181818;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid #333;
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+            color: var(--gold);
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .product-card label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .product-card input {
+            width: 100%;
+            padding: 0.7rem;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background: #111;
+            color: var(--text-light);
+        }
+
+        .product-card button {
+            margin-top: 0.8rem;
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: none;
+            background: var(--gold);
+            color: #111;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .product-steps {
+            margin-top: 2.5rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .step {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #333;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th {
+            color: var(--gold);
+            font-family: "Playfair Display", serif;
+            text-align: left;
+        }
+
+        /* ABOUT / PATH SECTION */
+        .two-cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+        }
+
+        .about-highlight {
+            margin-top: 1.5rem;
+            padding: 1.2rem 1.4rem;
+            border-radius: 10px;
+            background: #181818;
+            border: 1px solid #333;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .about-highlight strong {
+            color: var(--gold);
+        }
+
+        /* CONTACT */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact input,
+        .contact select,
+        .contact textarea {
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: none;
+            background: #222;
+            color: var(--text-light);
+            font-family: inherit;
+        }
+
+        .contact textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact button {
+            background: var(--gold);
+            color: black;
+            padding: 0.9rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #000;
+            color: #777;
+            font-size: 13px;
+            border-top: 1px solid #222;
+        }
+
+        /* FADE-IN */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+    header {
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    /* MOBILE VERSION OF TAX HEADLINE */
+    .tax-headline {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+}
+
+    </style>
+</head>
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="logo">
-            <img src="DVAG-LOGO.png" class="dvag-logo" alt="DVAG Logo">
-            <div class="logo-text-block">
-                <span class="logo-main">Naresh Virothi | Gold & Silver</span>
-                <span class="logo-sub">in association with Geiger Edelmetalle</span>
+<header>
+    <div class="logo">
+        <img src="DVAG-LOGO.png" class="dvag-logo" alt="DVAG Logo">
+        <div class="logo-text-block">
+            <span class="logo-main">Naresh Virothi | Gold & Silver</span>
+            <span class="logo-sub">in association with Geiger Edelmetalle</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#gold">Gold</a>
+        <a href="#silver">Silver</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang-switch">
+        <button class="active">DE</button>
+        <button>EN</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero fade-in">
+
+  <div class="hero-top-image">
+    <div class="hero-image-spotlight"></div>
+    <img src="Gold-Silver.png" alt="Gold and Silver Products">
+  </div>
+
+  <h1>Welcome. Empower your financial freedom with Gold & Silver.</h1>
+
+
+    <p class="tagline">
+        Physical gold and silver – transparent, secure, and personally guided.  
+        For people who value real assets.
+    </p>
+
+   <h2 class="tax-headline">100% TAX‑FREE ON CAPITAL GAINS</h2>
+
+    <button class="btn" onclick="document.getElementById('gold').scrollIntoView({behavior:'smooth'})">
+        Explore Gold
+    </button>
+
+    <button class="btn" onclick="document.getElementById('silver').scrollIntoView({behavior:'smooth'})">
+        Explore Silver
+    </button>
+</section>
+
+
+<!-- WHY GOLD & SILVER -->
+<section class="section fade-in">
+    <h2>Why Gold & Silver?</h2>
+    <p class="lead">
+        Precious metals have been symbols of stability, independence, and real value for centuries. They complement traditional investments and create security – even in volatile times.
+    </p>
+
+    <div class="three-cols">
+        <div class="info-box">
+            <h3>Store of Value</h3>
+            <p>Gold and silver have been stable stores of value for centuries – independent of currencies and politics.</p>
+        </div>
+        <div class="info-box">
+            <h3>Diversification</h3>
+            <p>Precious metals complement traditional investments and create balance in your portfolio.</p>
+        </div>
+        <div class="info-box">
+            <h3>Physical Security</h3>
+            <p>Real assets you can own, hold, and pass on – across generations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GOLD SECTION -->
+<section id="gold" class="section fade-in">
+    <div class="product">
+        <h2>Gold – Stability in Uncertain Times</h2>
+	
+        <p class="product-subline">
+            Whether monthly savings or one-time purchase – you decide how to build your gold wealth.
+        </p>
+<p class="tax-highlight"> 
+		Tax advantage: Under current German tax rules, long-term physical gold and silver can offer tax-free capital gains.
+</p>
+ 
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Gold Savings Plan</h3>
+                <p>Build your gold wealth step by step with a fixed monthly amount.</p>
+                <label for="goldMonthly">How much would you like to invest monthly?</label>
+                <input id="goldMonthly" type="number" min="0" placeholder="e.g. 200" />
+                <button type="button" onclick="calculateGoldMonthly()">CALCULATE</button>
+                <div id="goldMonthlyResult" class="result"></div>
+            </div>
+
+            <div class="product-card">
+                <h3>Gold One-Time Purchase</h3>
+                <p>Invest once in physical gold – ideal for shifting existing capital into tangible assets.</p>
+                <label for="goldLump">How much would you like to invest as a lump sum?</label>
+                <input id="goldLump" type="number" min="0" placeholder="e.g. 10000" />
+                <button type="button" onclick="calculateGoldLump()">CALCULATE</button>
+                <div id="goldLumpResult" class="result"></div>
             </div>
         </div>
 
-        <nav class="nav-desktop">
-            <a href="index.html">Home</a>
-            <a href="gold.html">Gold</a>
-            <a href="silver.html">Silver</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-        <div class="lang-switch">
-            <button class="lang-btn active" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="de">DE</button>
+        <div class="product-steps">
+            <h3>How Your Gold Investment Works</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Introduction</h4>
+                    <p>We clarify your goals, risk profile, and preferred strategy.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Concept</h4>
+                    <p>You receive a transparent recommendation for savings plan or one-time purchase.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Implementation</h4>
+                    <p>Execution via trusted partners, with clear and transparent costs.</p>
+                </div>
+            </div>
         </div>
 
-        <button class="hamburger" aria-label="Open Menu" aria-expanded="false">
-            <span></span><span></span><span></span>
+        <button class="btn" style="margin-top: 1.8rem;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Request Gold Consultation
         </button>
+    </div>
+</section>
 
-        <nav class="nav-mobile">
-            <a href="index.html">Home</a>
-            <a href="gold.html">Gold</a>
-            <a href="silver.html">Silver</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<!-- SILVER SECTION -->
+<section id="silver" class="section fade-in">
+    <div class="product">
+        <h2>Silver – The Flexible Metal of the Future</h2>
+        <p class="product-subline">
+            Silver can complement gold in your strategy – with a lower entry level and strong industrial demand.
+        </p>
 
-    <!-- CINEMATIC HERO -->
-    <section class="hero">
-        <div class="hero-top-image">
-            <div class="hero-image-spotlight"></div>
-            <img src="Gold-Silver.png" alt="Gold and Silver Bars">
+        <p class="tax-highlight">
+            Tax advantage: Under current German tax rules, long-term physical gold and silver can offer tax-free capital gains.
+        </p>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Silver Savings Plan</h3>
+                <p>Invest monthly in physical silver – ideal for long-term wealth building with a smaller entry level.</p>
+                <label for="silverMonthly">How much would you like to invest monthly?</label>
+                <input id="silverMonthly" type="number" min="0" placeholder="e.g. 100" />
+                <button type="button" onclick="calculateSilverMonthly()">CALCULATE</button>
+                <div id="silverMonthlyResult" class="result"></div>
+            </div>
+
+            <div class="product-card">
+                <h3>Silver One-Time Purchase</h3>
+                <p>Invest once in silver – for those who see opportunities in this industrial metal.</p>
+                <label for="silverLump">How much would you like to invest as a lump sum?</label>
+                <input id="silverLump" type="number" min="0" placeholder="e.g. 5000" />
+                <button type="button" onclick="calculateSilverLump()">CALCULATE</button>
+                <div id="silverLumpResult" class="result"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section fade-in">
+    <h2>Gold vs. Silver – Which Fits Your Strategy?</h2>
+    <p class="lead">Both metals can play a role in your portfolio. The right mix depends on your goals.</p>
+
+    <div class="comparison-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Gold</th>
+                    <th>Silver</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Entry Price</td>
+                    <td>Higher</td>
+                    <td>Lower</td>
+                </tr>
+                <tr>
+                    <td>Volatility</td>
+                    <td>Lower</td>
+                    <td>Higher</td>
+                </tr>
+                <tr>
+                    <td>Industrial Demand</td>
+                    <td>Low</td>
+                    <td>Very High</td>
+                </tr>
+                <tr>
+                    <td>Long-Term Stability</td>
+                    <td>Excellent</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>Tax-Free Gains (Germany)</td>
+                    <td>Possible after holding period</td>
+                    <td>Possible after holding period</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- PATH + ABOUT -->
+<section id="about" class="section fade-in">
+    <h2>Your Path to Real Asset Ownership</h2>
+    <div class="two-cols">
+        <div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Personal Consultation</h4>
+                    <p>We clarify your goals, risk profile, and preferred strategy.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Tailored Strategy</h4>
+                    <p>You receive a transparent, personalized gold or silver plan.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Secure Purchase</h4>
+                    <p>We execute your investment with trusted, certified partners.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Long-Term Guidance</h4>
+                    <p>Ongoing support, updates, and adjustments as your life evolves.</p>
+                </div>
+            </div>
         </div>
 
-        <h1 class="hero-title">Gold & Silver Investments</h1>
-        <p class="hero-subtitle">Stability. Security. Real Value.</p>
-    </section>
+        <div class="about-text">
+            <h3>Behind the Gold & Silver Concept</h3>
+            <p>
+                I am Naresh Virothi, financial advisor at Deutsche Vermögensberatung. In my work, I have repeatedly seen how important real, tangible assets are for my clients’ sense of security.
+            </p>
+            <p>
+                Gold and silver are more than metals to me – they are building blocks for financial freedom and independence.
+            </p>
+            <p>
+                Many people feel overwhelmed by financial products or distrust the financial system. With physical precious metals, part of the wealth can be taken out of that system – without complicated jargon.
+            </p>
+            <p>
+                My role is to make this world understandable for you and to develop a strategy together that fits your life. Focus: wealth building, retirement planning, precious metals. Approach: personal, transparent, long-term.
+            </p>
 
-    <!-- PAGE CONTENT -->
-    <main>
-        <section class="section">
-            <h2>Welcome</h2>
-            <p>Your trusted partner for physical gold and silver investments.</p>
-        </section>
-    </main>
+            <div class="about-highlight">
+                <strong>Naresh Virothi</strong><br />
+                Financial Advisor · Deutsche Vermögensberatung
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- CONTACT -->
+<section id="contact" class="section fade-in contact">
+    <h2>Let’s talk about Gold & Silver</h2>
+    <p class="lead">
+        Tell me how you want to invest – savings plan, one-time purchase, or both. I will get back to you personally.
+    </p>
+
+    <!-- Formspree Form -->
+    <form action="https://formspree.io/f/xgooakew" method="POST">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone (optional)" />
+        <select name="service">
+            <option>Gold Savings Plan</option>
+            <option>Gold One-Time Purchase</option>
+            <option>Silver Savings Plan</option>
+            <option>Silver One-Time Purchase</option>
+            <option>Gold & Silver Strategy</option>
+        </select>
+        <textarea name="message" placeholder="Message / Your plans"></textarea>
+        <button type="submit">REQUEST CONSULTATION</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Naresh Virothi – Gold & Silver Advisory · Deutsche Vermögensberatung
+</footer>
+
+<script>
+/* Spotlight follows mouse */
+document.addEventListener("mousemove", (e) => {
+    const spotlight = document.querySelector(".hero-spotlight");
+    if (!spotlight) return;
+
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+
+    spotlight.style.background = `
+        radial-gradient(
+            circle at ${x}% ${y}%,
+            rgba(212, 175, 55, 0.16) 0%,
+            rgba(212, 175, 55, 0.06) 26%,
+            transparent 60%
+        )
+    `;
+});
+
+/* Simple fade-in on scroll */
+const fadeEls = document.querySelectorAll(".fade-in");
+const onScroll = () => {
+    const trigger = window.innerHeight * 0.85;
+    fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < trigger) {
+            el.classList.add("visible");
+        }
+    });
+};
+window.addEventListener("scroll", onScroll);
+window.addEventListener("load", onScroll);
+
+/* Very simple calculator logic – placeholder, not financial advice */
+function formatEuro(value) {
+    return new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
+}
+
+function calculateGoldMonthly() {
+    const input = document.getElementById("goldMonthly");
+    const out = document.getElementById("goldMonthlyResult");
+    const v = Number(input.value);
+    if (!v || v <= 0) {
+        out.textContent = "Please enter a valid monthly amount.";
+        return;
+    }
+    const year = v * 12;
+    const tenYears = v * 12 * 10;
+    out.textContent = `Example: After 1 year ≈ ${formatEuro(year)}, after 10 years ≈ ${formatEuro(tenYears)} (without price changes).`;
+}
+
+function calculateGoldLump() {
+    const input = document.getElementById("goldLump");
+    const out = document.getElementById("goldLumpResult");
+    const v = Number(input.value);
+    if (!v || v <= 0) {
+        out.textContent = "Please enter a valid lump sum.";
+        return;
+    }
+    out.textContent = `Example: A one-time investment of ${formatEuro(v)} in physical gold can be structured individually – weight, form, and custody.`;
+}
+
+function calculateSilverMonthly() {
+    const input = document.getElementById("silverMonthly");
+    const out = document.getElementById("silverMonthlyResult");
+    const v = Number(input.value);
+    if (!v || v <= 0) {
+        out.textContent = "Please enter a valid monthly amount.";
+        return;
+    }
+    const year = v * 12;
+    const tenYears = v * 12 * 10;
+    out.textContent = `Example: After 1 year ≈ ${formatEuro(year)}, after 10 years ≈ ${formatEuro(tenYears)} (without price changes).`;
+}
+
+function calculateSilverLump() {
+    const input = document.getElementById("silverLump");
+    const out = document.getElementById("silverLumpResult");
+    const v = Number(input.value);
+    if (!v || v <= 0) {
+        out.textContent = "Please enter a valid lump sum.";
+        return;
+    }
+    out.textContent = `Example: A one-time investment of ${formatEuro(v)} in silver can benefit from industrial demand and long-term potential.`;
+}
+</script>
+
 </body>
 </html>
