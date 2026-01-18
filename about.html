@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About – Naresh Virothi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section id="about" class="section">
+
+  <h2>About Me</h2>
+  <p>
+    I help individuals build long-term financial security through physical gold and silver.
+    Transparent, personal, and backed by trusted partners.
+  </p>
+
+</section>
+
+<div id="footer"></div>
+
+<script>
+  async function loadPart(id, file) {
+    const element = document.getElementById(id);
+    const response = await fetch(file);
+    element.innerHTML = await response.text();
+  }
+
+  loadPart("header", "header.html");
+  loadPart("footer", "footer.html");
+</script>
+
+</body>
+</html>

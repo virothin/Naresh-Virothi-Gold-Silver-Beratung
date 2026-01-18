@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Gold – Naresh Virothi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section id="gold" class="section">
+
+  <h2>Gold – Stabilität in unsicheren Zeiten</h2>
+  <p>Physisches Gold zählt weltweit zu den zuverlässigsten Wertspeichern.</p>
+
+  <p class="tax-highlight">
+    Steuer­vorteil: Nach aktueller deutscher Gesetzeslage können langfristige physische Gold- und Silberanlagen steuerfreie Kursgewinne ermöglichen.
+  </p>
+
+  <div class="plan-box">
+    <h3>Gold-Sparplan</h3>
+    <p>Bauen Sie Ihr Goldvermögen Schritt für Schritt mit einem festen Monatsbetrag auf.</p>
+    <label>Wie viel möchten Sie monatlich investieren?</label>
+    <input type="number" placeholder="z. B. 200">
+    <button class="btn">Berechnen</button>
+  </div>
+
+  <div class="plan-box">
+    <h3>Gold-Einmalkauf</h3>
+    <p>Investieren Sie einen einmaligen Betrag in physisches Gold.</p>
+    <label>Wie viel möchten Sie einmalig investieren?</label>
+    <input type="number" placeholder="z. B. 10000">
+    <button class="btn">Berechnen</button>
+  </div>
+
+</section>
+
+<div id="footer"></div>
+
+<script>
+  async function loadPart(id, file) {
+    const element = document.getElementById(id);
+    const response = await fetch(file);
+    element.innerHTML = await response.text();
+  }
+
+  loadPart("header", "header-de.html");
+  loadPart("footer", "footer.html");
+</script>
+
+</body>
+</html>
