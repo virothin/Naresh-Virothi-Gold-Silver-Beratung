@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About – Naresh Virothi</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Trusted Financial Advisor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="header"></div>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="DVAG-LOGO.png" class="dvag-logo" alt="DVAG Logo">
+            <div class="logo-text-block">
+                <span class="logo-main">Naresh Virothi | Gold & Silver</span>
+                <span class="logo-sub">in association with Geiger Edelmetalle</span>
+            </div>
+        </div>
 
-<section id="about" class="section">
+        <nav class="nav-desktop">
+            <a href="index.html">Home</a>
+            <a href="gold.html">Gold</a>
+            <a href="silver.html">Silver</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-  <h2>About Me</h2>
-  <p>
-    I help individuals build long-term financial security through physical gold and silver.
-    Transparent, personal, and backed by trusted partners.
-  </p>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="de">DE</button>
+        </div>
 
-</section>
+        <button class="hamburger" aria-label="Open Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
 
-<div id="footer"></div>
+        <nav class="nav-mobile">
+            <a href="index.html">Home</a>
+            <a href="gold.html">Gold</a>
+            <a href="silver.html">Silver</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<script>
-  async function loadPart(id, file) {
-    const element = document.getElementById(id);
-    const response = await fetch(file);
-    element.innerHTML = await response.text();
-  }
+    <!-- CINEMATIC HERO -->
+    <section class="hero">
+        <div class="hero-top-image">
+            <div class="hero-image-spotlight"></div>
+            <img src="Gold-Silver.png" alt="Gold and Silver Bars">
+        </div>
 
-  loadPart("header", "header.html");
-  loadPart("footer", "footer.html");
-</script>
+        <h1 class="hero-title">Your Trusted Financial Advisor</h1>
+        <p class="hero-subtitle">Transparent. Certified. Experienced.</p>
+    </section>
 
+    <!-- PAGE CONTENT -->
+    <main>
+        <section class="section">
+            <h2>About Me</h2>
+            <p>I help clients build long-term wealth through physical gold and silver.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

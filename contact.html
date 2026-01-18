@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact – Naresh Virothi</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let’s Build Your Wealth Strategy</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="header"></div>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="DVAG-LOGO.png" class="dvag-logo" alt="DVAG Logo">
+            <div class="logo-text-block">
+                <span class="logo-main">Naresh Virothi | Gold & Silver</span>
+                <span class="logo-sub">in association with Geiger Edelmetalle</span>
+            </div>
+        </div>
 
-<section id="contact" class="section">
+        <nav class="nav-desktop">
+            <a href="index.html">Home</a>
+            <a href="gold.html">Gold</a>
+            <a href="silver.html">Silver</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-  <h2>Contact</h2>
-  <p>Let’s discuss your financial goals.</p>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="de">DE</button>
+        </div>
 
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button class="btn">Send Message</button>
-  </form>
+        <button class="hamburger" aria-label="Open Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
 
-</section>
+        <nav class="nav-mobile">
+            <a href="index.html">Home</a>
+            <a href="gold.html">Gold</a>
+            <a href="silver.html">Silver</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<div id="footer"></div>
+    <!-- CINEMATIC HERO -->
+    <section class="hero">
+        <div class="hero-top-image">
+            <div class="hero-image-spotlight"></div>
+            <img src="Gold-Silver.png" alt="Gold and Silver Bars">
+        </div>
 
-<script>
-  async function loadPart(id, file) {
-    const element = document.getElementById(id);
-    const response = await fetch(file);
-    element.innerHTML = await response.text();
-  }
+        <h1 class="hero-title">Let’s Build Your Wealth Strategy</h1>
+        <p class="hero-subtitle">Secure. Personal. Tailored.</p>
+    </section>
 
-  loadPart("header", "header.html");
-  loadPart("footer", "footer.html");
-</script>
+    <!-- PAGE CONTENT -->
+    <main>
+        <section class="section">
+            <h2>Contact</h2>
+            <p>Reach out to start your investment journey.</p>
+        </section>
+    </main>
 
+    <script src="script.js"></script>
 </body>
 </html>
