@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Silver – Naresh Virothi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section id="silver" class="section">
+
+  <h2>Silver – The Flexible Metal of the Future</h2>
+  <p>Silver complements gold with a lower entry level and strong industrial demand.</p>
+
+  <p class="tax-highlight">
+    Tax advantage: Under current German tax rules, long-term physical gold and silver can offer tax-free capital gains.
+  </p>
+
+  <div class="plan-box">
+    <h3>Silver Savings Plan</h3>
+    <p>Invest monthly in physical silver.</p>
+    <label>How much would you like to invest monthly?</label>
+    <input type="number" placeholder="e.g. 100">
+    <button class="btn">Calculate</button>
+  </div>
+
+  <div class="plan-box">
+    <h3>Silver One-Time Purchase</h3>
+    <p>Invest a lump sum in silver.</p>
+    <label>How much would you like to invest as a lump sum?</label>
+    <input type="number" placeholder="e.g. 5000">
+    <button class="btn">Calculate</button>
+  </div>
+
+</section>
+
+<div id="footer"></div>
+
+<script>
+  async function loadPart(id, file) {
+    const element = document.getElementById(id);
+    const response = await fetch(file);
+    element.innerHTML = await response.text();
+  }
+
+  loadPart("header", "header.html");
+  loadPart("footer", "footer.html");
+</script>
+
+</body>
+</html>

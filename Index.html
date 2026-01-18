@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Naresh Virothi | Gold & Silver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section id="home" class="hero fade-in">
+
+  <div class="hero-top-image">
+    <div class="hero-image-spotlight"></div>
+    <img src="Gold-Silver.png" alt="Gold and Silver Products">
+  </div>
+
+  <h1>Welcome. Empower your financial freedom with Gold & Silver.</h1>
+
+  <h2 class="tax-headline">100% TAX‑FREE ON CAPITAL GAINS</h2>
+
+  <button class="btn" onclick="location.href='gold.html'">Explore Gold</button>
+  <button class="btn" onclick="location.href='silver.html'">Explore Silver</button>
+
+</section>
+
+<div id="footer"></div>
+
+<script>
+  async function loadPart(id, file) {
+    const element = document.getElementById(id);
+    const response = await fetch(file);
+    element.innerHTML = await response.text();
+  }
+
+  loadPart("header", "header.html");
+  loadPart("footer", "footer.html");
+</script>
+
+</body>
+</html>
+
